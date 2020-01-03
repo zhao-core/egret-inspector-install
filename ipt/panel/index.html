@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Egret Inspector</title>
+    <link href="style/devtool.css" rel="stylesheet" />
+    <script src="../lib/jquery-2.1.1.min.js"></script>
+    <script src="scripts/Loader.js"></script>
+</head>
+<body>
+    <div class="egret-dev-panel" style="width:100%">
+        <div class="left">
+            <div id="profile">
+                <canvas id="fpsChart" height="50" width="300"></canvas>
+                <span id="fps">60</span>fps
+            </div>
+            <div class="controls" id="control">
+                <label><input type="checkbox" id="chkPreventTouch" value="" /> 阻止点击</label>
+                <label><input type="checkbox" id="chkHighlightHover" value="" /> 高亮划过对象</label>
+                <label><input type="checkbox" id="chkHighlightClick" checked="checked" value="" /> 选中点击对象</label>
+                <img id="refreshTree" class="refresh" src="style/refresh.png" title="刷新" />
+            </div>
+            <div id="nodes" class="nodes">
+                <div class="display-object">
+                    <div class="parent">
+                        <span class="icon">{icon}</span>
+                        <span class="node"><span class="memberName">{memberName}</span> {name} </span>
+                        <input type="checkbox" class="toggle" value="" />
+                    </div>
+                    <div class="children">
+                    </div>
+                </div>
+            </div>
+            <div id="searchBar">
+                <form id="searchForm" action="/" method="get">
+                    <input type="text" id="txtSearchName" name="name" value="" placeholder="name,hashCode (ctrl|cmd+shift+f)" autocomplete="off" />
+                </form>
+            </div>
+        </div>
+        <div class="handle-v handle">
+        </div>
+        <div class="right">
+            <div class="header monospace" id="propHeader">
+                <div class="controls">
+                    <label>
+                        <input type="checkbox" id="showMethods" /> 列出方法
+                    </label>
+                    <label>
+                        <input type="checkbox" checked="checked" id="showPrivate" /> 私有属性
+                    </label>
+                    <img id="refreshProps" class="refresh" src="style/refresh.png" title="刷新" />
+                </div>
+            </div>
+            <div id="props" class="props">
+                <ol class="properties">
+                    <li class="property">
+                        <span class="icon">{icon}</span>
+                        <span class="getter"></span>
+                        <span class="name">{name}</span>
+                        <span class="separator">:</span>
+                        <span class="value">{value}</span>
+                    </li>
+                </ol>
+            </div>
+            <div class="header monospace" id="searchProp">
+                <input type="text" id="txtSearchProp" value="" placeholder="ctrl|cmd+f" autocomplete="off" />
+            </div>
+        </div>
+    </div>
+
+
+    <div id="changes">
+        <h2>Egret Inspector 2.5.5</h2>
+        <h3>支持 Egret 5.0 版本</h3>
+        <h3>更改了插件的安装方式，chrome 63版本以后要使用扩展中的开发者模式安装，修复了63版本以上插件损坏问题</h3>
+        <h3>修复了chrome 62版本一下断开后无法重现连接问题</h3>
+        <h3>修复了树结构面板中有时切换后台重新回到操作无法同步属性面板</h3>
+        <button class="close">关闭</button>
+    </div>
+
+</body>
+</html>

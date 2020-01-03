@@ -1,0 +1,427 @@
+﻿::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height:7px;
+}
+::-webkit-scrollbar-corner {
+    -webkit-appearance: none;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(120,120,120,.5);
+    -webkit-box-shadow: 0 0 2px rgba(255,255,255,.5);
+}
+
+
+html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    background-color:#000;
+}
+iframe{
+    border:none;
+    position:fixed;
+    height:100%; 
+    width:100%
+}
+
+#gameDiv {
+    margin:0;
+}
+.egret-dev-panel {
+    color:#DDD;
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    display:block;
+    width:300px;
+    text-align:left;
+    font-family:Consolas,Courier New, Courier, monospace;
+    font-size:12px;
+    background-color:#091528
+}
+.handle-v{
+    cursor:move;
+    width:10px;
+    height:100%;
+    float:left;
+    background-color:#666;
+}
+.handle{
+    cursor:move;
+}
+.left {
+
+    float:left;
+}
+#profile {
+    height: 60px;
+    width: 400px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    float:right;
+}
+#fps {
+    font-size:50px;
+    color:green;
+}
+#fpsChart {
+    margin-left:5px;
+}
+#control {
+    position:static;
+    display:block;
+    clear:both;
+    border-top: solid 5px #666666;
+    line-height:18px;
+}
+.refresh {
+    border-radius: 10px;
+    outline: none;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+    background-color:white;
+    cursor:pointer;
+}
+.nodes {
+    height:100%;
+    overflow-y:auto;
+    width:100%;
+    clear:both;
+    padding:0;
+    position:relative;
+}
+#layout {
+    text-align:center;
+}
+#layout div{
+    display:inline-block;
+}
+#layout .content{
+    padding:10px;
+    border:1px solid #AAA;
+}
+.display-object{
+    color: yellowgreen;
+    cursor:default;
+    line-height:16px;
+    white-space:nowrap;
+    clear: both;
+}
+.display-object .icon{
+    cursor:pointer;
+}
+.display-object .icon::after{
+    content:" "
+}
+.display-object .icon::before{
+    content:" "
+}
+.display-object.invisible {
+    opacity:0.5;
+}
+.children {
+    display:none;
+}
+.memberName {
+    color: #FF9DC3;
+}
+.memberName:after {
+    content:' :'
+}
+.display-object.hidden,.display-object.hidden .display-object{
+    color: #B6B6B6;
+}
+#searchBar {
+    background-color:#666;
+    padding:5px;
+}
+#txtSearchName{
+    width:240px;
+    border-radius: 2px;
+    border: none;
+    height: 16px;
+    padding-left: 5px;
+    outline: none;
+}
+#searchProp {
+    background-color: #666;
+    padding: 5px;
+}
+#txtSearchProp{
+    width:240px;
+    border-radius: 2px;
+    border: none;
+    height: 16px;
+    padding-left: 5px;
+    outline: none;
+}
+.right {
+    height:100%;
+    width:300px;
+    position: absolute;
+    right: 0;
+}
+.props {
+    overflow-y:auto;
+    height:100%;
+    width:100%;
+}
+.header{
+    padding: 4px;
+    -webkit-user-select: none;
+       -moz-user-select: -moz-none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.controls {
+    clear:both;
+}
+.controls input{
+    vertical-align:sub;
+}
+.props .title{
+    float:left;
+}
+.property {
+    text-indent:5px;
+    margin:1px;
+}
+.property.function .name:after {
+    content:'()';
+}
+.property.searchResult {
+    border-radius: 3px;
+    background-color: rgba(82, 82, 82, 0.72);
+}
+.property.searchResult.searchCurrent {
+    color:black;
+    background-color: yellow;
+}
+li.expandable{
+    cursor:pointer;
+}
+li.expandable ul{
+    cursor:default;
+    padding-left:2em;
+}
+span.value {
+    color: yellowgreen;
+}
+span.getter {
+    display:none;
+}
+span.getter:after{
+    content:'get '
+}
+li.noSetter > span.getter{
+    display:inline;
+    opacity:0.5;
+}
+span.value input{height: 12px;
+    padding: 0;
+    border: 0;
+    box-shadow: #FFF 0px 0px;
+    width: 100px;
+    background-color: #091528;
+    color: yellowgreen;
+    font-family: Consolas,Courier New, Courier, monospace;
+    vertical-align: text-top;
+    border-bottom: #EEE 1px solid;
+    font-size: 12px;
+}
+span.name {
+color: #FF9DC3;
+}
+.searchCurrent span.name {
+    color:rgb(202, 0, 0);
+}
+.searchCurrent span.value {
+    color:rgb(3, 94, 76);
+}
+    .props .properties {
+        padding-left: 1em;
+    }
+
+    .properties li{
+        
+    white-space: nowrap;
+    }
+span.expand {
+    cursor:pointer;
+}
+
+input.toggle {
+    margin: 0;
+    height: 14px;
+    float: right;
+}
+
+.parent:hover{
+    background-color:#000;
+}
+.parent.selected{
+    background-color:#16376B;
+}
+
+ol{
+    outline-style:none;
+    padding-left:2em;
+    margin: 0;
+}
+ol li{
+    list-style:none;
+}
+
+
+
+.context-menu-list {
+    margin:0; 
+    padding:0;
+    
+    min-width: 120px;
+    max-width: 250px;
+    display: inline-block;
+    position: absolute;
+    list-style-type: none;
+    
+    border: 1px solid #DDD;
+    background: #EEE;
+    
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+       -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        -ms-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+         -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+.context-menu-item {
+    padding: 2px 2px 2px 24px;
+    background-color: #EEE;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: -moz-none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.context-menu-separator {
+    padding-bottom:0;
+    border-bottom: 1px solid #DDD;
+}
+
+.context-menu-item > label > input,
+.context-menu-item > label > textarea {
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
+}
+
+.context-menu-item.hover {
+    cursor: pointer;
+    background-color: #39F;
+}
+
+.context-menu-item.disabled {
+    color: #666;
+}
+
+.context-menu-input.hover,
+.context-menu-item.disabled.hover {
+    cursor: default;
+    background-color: #EEE;
+}
+
+.context-menu-submenu:after {
+    content: ">";
+    color: #666;
+    position: absolute;
+    top: 0;
+    right: 3px;
+    z-index: 1;
+}
+
+/* icons
+    #protip:
+    In case you want to use sprites for icons (which I would suggest you do) have a look at
+    http://css-tricks.com/13224-pseudo-spriting/ to get an idea of how to implement 
+    .context-menu-item.icon:before {}
+ */
+.context-menu-item.icon { min-height: 18px; background-repeat: no-repeat; background-position: 4px 2px; }
+.context-menu-item.icon-edit { background-image: url(images/page_white_edit.png); }
+.context-menu-item.icon-cut { background-image: url(images/cut.png); }
+.context-menu-item.icon-copy { background-image: url(images/page_white_copy.png); }
+.context-menu-item.icon-paste { background-image: url(images/page_white_paste.png); }
+.context-menu-item.icon-delete { background-image: url(images/page_white_delete.png); }
+.context-menu-item.icon-add { background-image: url(images/page_white_add.png); }
+.context-menu-item.icon-quit { background-image: url(images/door.png); }
+
+/* vertically align inside labels */
+.context-menu-input > label > * { vertical-align: top; }
+
+/* position checkboxes and radios as icons */
+.context-menu-input > label > input[type="checkbox"],
+.context-menu-input > label > input[type="radio"] {
+    margin-left: -17px;
+}
+.context-menu-input > label > span {
+    margin-left: 5px;
+}
+
+.context-menu-input > label,
+.context-menu-input > label > input[type="text"],
+.context-menu-input > label > textarea,
+.context-menu-input > label > select {
+    display: block;
+    width: 100%;
+    
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.context-menu-input > label > textarea {
+    height: 100px;
+}
+.context-menu-item > .context-menu-list {
+    display: none;
+    /* re-positioned by js */
+    right: -5px;
+    top: 5px;
+}
+
+.context-menu-item.hover > .context-menu-list {
+    display: block;
+}
+
+.context-menu-accesskey {
+    text-decoration: underline;
+}
+
+
+#changes {
+    position: absolute;
+    margin: 50px 0;
+    background-color: #28354f;
+    color: #DDD;
+    right: 50px;
+    padding: 10px 30px;
+    left: 50px;
+    display:none;
+}
+
+    #changes .close {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }

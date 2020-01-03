@@ -1,0 +1,35 @@
+﻿{
+    "manifest_version": 2,
+    "name": "Egret Inspector",
+    "description": "Egret Chrome Debug Tool",
+    "version": "2.5.5",
+    "devtools_page": "devtools.html",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuBlYFyBNwukEl8rNPtiMmK9Uav+S93hcNSdXDqzBp89yI4LdyK06D5vynZU+hPFVuDIRb2/7omOUkMjyZ5Wu7qAWZisHl57DtPv5jsRxeI0fUPiSem7+ibpwuJCuTJA5r+TYUGLjw8YrhCO39k4VX9GUHygTBh9tlHhtKhSzuKmCYiM5fQBz4tjUIgOCACvSlm6rYmF98sqMlg+8TgBGSh1ifTPV2SL5vaZPry8I9OHVMHoQ0c7sa0owmqtHertHVON7QRoXXkax1KHEPzKix2qv7vVzbeL/DLLEviAeqd6tiwHipyEsgUJnsqVbg4l7kGVZOXYnjmHh7SLVJP323wIDAQAB",
+    "content_scripts": [
+        {
+            "matches": [ "<all_urls>" ],
+            "js": [
+                "contentScripts.min.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "scripts": [ "backgroudScripts.min.js" ]
+    },
+    "permissions": [
+        "*://*/*",
+        "system.cpu",
+        "tabs",
+        "storage",
+        "nativeMessaging"
+    ],
+    "web_accessible_resources": [
+        "*/*",
+        "*"
+    ],
+    "icons": {
+        
+        "48": "icon.png"
+    }
+}
