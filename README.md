@@ -30,7 +30,7 @@
   }, 200);
 ```
 
-### 使用
+### 直接使用
 ```shell
 git clone https://github.com/jsl6/EgretInspector-install.git
 ```
