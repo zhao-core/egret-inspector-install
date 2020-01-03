@@ -2,7 +2,7 @@
 控制台偶尔会报错 Uncaught TypeError: this.addChild is not a function 。
 这插件依赖页面中的 Egret 引擎，当它在加载时，游戏页面中的 Egret 引擎可能还未完全加载，所以调用 this.addChild 方法导致报错。
 
-[]()
+![inspector error](https://github.com/jsl6/EgretInspector-install/blob/master/docs/inspector-error.jpg?raw=true)
 
  ### 解决 this.addChild is not a function 报错
 
@@ -36,9 +36,9 @@ git clone https://github.com/jsl6/EgretInspector-install.git
 ```
 
 打开chrome 扩展程序，开发模式下，加载已解压的扩展程序
-
+![extend](https://github.com/jsl6/EgretInspector-install/blob/master/docs/extend.jpg?raw=true)
 选择前面EgretInspector-install即可。
 这时打开Egret运行页面，插件不会报错。
-
+![EgretInspector](https://github.com/jsl6/EgretInspector-install/blob/master/docs/egret-inspector.jpg?raw=true)
 亲测Chrome 79.0.3945.88（正式版本）有效。
 修改基于：EgretInspector-v2.5.5。
