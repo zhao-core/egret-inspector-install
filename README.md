@@ -1,4 +1,8 @@
 ## Egret 白鹭开发Chrome插件（修复版）
+### 更新：20210113更新
+亲测Chrome 87.0.4280.141（正式版本）有效   
+
+
 控制台偶尔会报错 Uncaught TypeError: this.addChild is not a function 。
 这插件依赖页面中的 Egret 引擎，当它在加载时，游戏页面中的 Egret 引擎可能还未完全加载，所以调用 this.addChild 方法导致报错。
 
@@ -42,5 +46,5 @@ git clone https://github.com/jsl6/EgretInspector-install.git
 这时打开Egret运行页面，插件不会报错。
 ![EgretInspector](https://github.com/jsl6/EgretInspector-install/blob/master/docs/egret-inspector.jpg?raw=true)
 
-亲测Chrome 79.0.3945.88（正式版本）有效。  
+亲测Chrome 87.0.4280.141（正式版本）有效 - 20210113更新。  
 修改基于：EgretInspector-v2.5.5。
